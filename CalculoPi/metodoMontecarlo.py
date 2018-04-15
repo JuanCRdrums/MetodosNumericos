@@ -15,11 +15,11 @@ dentro = float(0) #puntos dentro de la circunferencia
 fuera = float(0) #puntos por fuera de la circunferencia
 
 
-for i in range(n):#se generan números aleatorios para x e y en el rango entre 0 y el diametro propuesto
+for i in range(n):#se generan números aleatorios para x e y en el rango entre -r y r
 	x = random.uniform(-r,r)
 	y = random.uniform(-r,r)
 	puntos.append((x,y))
-	if puntos[i][0]*puntos[i][0] + puntos[i][1]*puntos[i][1] <= r*r: # x² + y² <= r (está dentro de la circunferencia)
+	if puntos[i][0]*puntos[i][0] + puntos[i][1]*puntos[i][1] <= r*r: # x² + y² <= r² (está dentro de la circunferencia)
 		dentro += 1
 	else:
 		fuera += 1
