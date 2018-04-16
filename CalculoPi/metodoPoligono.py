@@ -3,6 +3,7 @@
 import math
 import random
 from decimal import *
+import time
 
 #------------MÉTODO DEL POLÍGONO----------------
 
@@ -13,6 +14,8 @@ l = 10000 #cantidad máxima de lados para el polígono a usar. Se calculará has
 
 i = 4 #iterador para la cantidad de lados que se calculan
 d = math.sqrt(2) #medida de un cuadrado inscrito dentro de una circunferencia de radio 1
+cont = 0 #Contador de iteraciones
+inicio = time.clock()
 
 while i <= l:
 	if l >= 4 and l < 8: #para el caso en el que sea un cuadrado
@@ -24,7 +27,10 @@ while i <= l:
 	pi = Decimal((n*lado)/2)
 	i = Decimal(i*2) #se duplica la cantidad de lados del polígono
 	d = Decimal(lado)
+	cont += 1
 
+final = time.clock()
+demora = final - inicio
 piNominal = Decimal(math.pi)
 error = abs(pi*100/piNominal - 100)
 
@@ -33,3 +39,5 @@ print "\t MÉTODO DEL POLÍGONO"
 print "Cantidad de lados del polígono: ",i/2
 print "Valor de pi calculado: ",pi
 print "Porcentaje de error: ",error
+print "Cantidad de iteraciones: ",cont
+print "Tiempo de ejecución: ",demora
