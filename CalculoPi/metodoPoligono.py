@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 import math
 import random
+from decimal import *
 
 #------------MÉTODO DEL POLÍGONO----------------
 
@@ -18,13 +19,14 @@ while i <= l:
 		lado = d
 		pi = (i*lado)/2
 	else:
-		lado = math.sqrt(2-2*math.sqrt(1 - (d**2)/4))
-	n = i*2 #cantidad de lados del polígono actual
-	pi = (n*lado)/2
-	i = i*2 #se duplica la cantidad de lados del polígono
-	d = lado
+		lado = Decimal(math.sqrt(2-2*math.sqrt(1 - (d**2)/4)))
+	n = Decimal(i*2) #cantidad de lados del polígono actual
+	pi = Decimal((n*lado)/2)
+	i = Decimal(i*2) #se duplica la cantidad de lados del polígono
+	d = Decimal(lado)
 
-error = abs(pi*100/math.pi - 100)
+piNominal = Decimal(math.pi)
+error = abs(pi*100/piNominal - 100)
 
 
 print "\t MÉTODO DEL POLÍGONO"
