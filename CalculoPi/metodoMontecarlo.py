@@ -5,7 +5,7 @@ import random
 import time
 
 #---------------------MÉTODO MONTECARLO---------------------------
-#Complejidad lineal
+#Complejidad n²
 
 n = 1000000 #cantidad de puntos aleatorios																																																																																																																																																																																	 #cantidad de valores aleatorios para x e y
 d = float(4) #diámetro de la circunferencia
